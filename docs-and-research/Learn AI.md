@@ -139,3 +139,73 @@ Based on the outcome of the Markov chain (ex. sunny or raining), we then apply a
 > How is this machine learning
 
 This can tie into machine learning by gathering these statistics from a large dataset.
+
+### Module 4: Neural Networks
+
+[Colab](https://colab.research.google.com/drive/1HHJfPatUz_JT-hNAsTjSOnc4ZgdErK2z#scrollTo=3CAk4hePVYng)
+
+#todo In model creation section of colab, learn what all the different options are and differences between them/how they work (specifically `adam` optimizer)
+
+A neural network is a graph of points which spread data from the input points to the output points.
+
+#### Input Nodes
+
+There must be as many `input neurons` as there are data points (a 128x128 image would have 128x128 input neurons, potentially more).
+
+When preprocessing data, it is best to ensure that all values are between 0 and 1 (or whatever else the neural network expects, likely from the [[#Activation Function]])
+#### Output Nodes
+
+There are as many `output nodes` as you desire. If you are making a binary choice *(ex. Red or Blue)*, you could have one `output node` which 0 corresponds to red and 1 corresponds to blue, or two output nodes where one corresponds to the probability of red and the other blue.
+
+#### Hidden Layers
+
+Between the input and output layers there are hidden layers. These are extra layers of connected nodes in the graph. Having these makes the neural network capable of more complex tasks.
+
+#### Weights
+
+Nodes from one layers are connected to nodes in the next layers. If every node in the in the current layers is connected to every node in the next layer, it is node as a `densly connected` layer. Each connection has a weight assigned to it.
+
+> Computing
+
+To compute the values of nodes one layer `A` given the weights `W` and values `N` of nodes in the previous layer, the following computation is used: $$A_j=\sum_{i=0}^{n}N_iW_i$$
+#### Biases
+
+In addition to the `weights` connecting the nodes, there is also a `bias` at each layer that connects to every neuron in that layer. It is applied equally to all nodes in the layer (a weight of 1 all around)
+
+Therefor, our new computation is as follows: $$A_j=B+\sum_{i=0}^nN_iW_i$$
+Where `B` is the `bias` that is applied to all nodes in `A`'s layer.
+
+#### Activation Function
+
+An activation function is used for the following reasons:
+- To guarantee the ranges of values for each node
+- To gather more dimensions about the data
+
+> What is an activation function
+
+An activation function is one that transforms the value of a neuron into a different form. An example is `sigmoid`: $$y=\frac{1}{1+e_-x}$$
+Assume our activation function is `F` (may or may not be `sigmoid`), our new computation looks as follows: $$A_j=F(B+\sum_{i=0}^nN_iW_i)$$
+> Range of Values
+
+The `sigmoid` function makes negative values approach `0`, and positive values approach `1`, which caps the range of values.
+
+This can be useful for making sure that numeric values don't overpower each other. Say one `input neuron` is `cost of a house` (large number), and another is `interest rate` (smaller number). An activation function would ensure that the large numbers don't overpower. That is something for the weights to decide.
+
+> Dimensions of Data
+
+For more complex activation functions, they can be tailored to somewhat categorize the inputs by altering them based on the function. I don't have an example. #todo look more into this
+
+#### Validation Function
+
+To verify the results of a network, a validation function is used. This determines how good or bad the results are. One common example is `mean squared error`, or `MSE`
+
+#### Optimization
+
+Initially all weights and biases are random values. To improve their selection, some algorithms are used. Common ones are `backpropagation` and/or `gradient decent`
+
+#todo learn the math behind gradient decent and other optimization functions
+
+#### Fitting a Model
+Fitting a model is training the neural network on your data. It will adjust all the values inside the network based on the training data.
+
+Too many epochs can over train the data. This can be apparent when the accuracy from the train is higher than the accuracy from the test.
