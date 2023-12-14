@@ -183,7 +183,7 @@ An activation function is used for the following reasons:
 
 > What is an activation function
 
-An activation function is one that transforms the value of a neuron into a different form. An example is `sigmoid`: $$y=\frac{1}{1+e_-x}$$
+An activation function is one that transforms the value of a neuron into a different form. An example is `sigmoid`: $$y=\frac{1}{1+e^{-x}}$$
 Assume our activation function is `F` (may or may not be `sigmoid`), our new computation looks as follows: $$A_j=F(B+\sum_{i=0}^nN_iW_i)$$
 > Range of Values
 
@@ -209,3 +209,37 @@ Initially all weights and biases are random values. To improve their selection, 
 Fitting a model is training the neural network on your data. It will adjust all the values inside the network based on the training data.
 
 Too many epochs can over train the data. This can be apparent when the accuracy from the train is higher than the accuracy from the test.
+
+### Module 5: Convolutional Neural Networks
+
+[Colab](https://colab.research.google.com/drive/1tcusjndcKfReYFwec5P8-oAUs42kjSsC)
+
+#todo learn the math behind this (seems like a common one)
+
+#### Convolutional Neural Networks
+
+In dense neural network layers, every neuron from the previous layer is connected to every neuron of the next layer. The output of one of these layers is a set of numbers to serve as probability or be fed into the next layer.
+
+In convolutional layers, the layer applied some `filters`, which can do things such as detect lines, diagonals, or anything else.
+
+The output of this layers is called a `feature map`, which gives general likelihoods of the filter being true in a certain region. These feature maps are smaller than the original input.
+
+##### Filters
+
+In dense neural networks, the `weights` are the trainable parameters. In CNN's, `filters` are the trainable parameters. #todo learn how they are trained.
+
+A filter might be a 3x3 grid, where all the values are 0.001 except for a line of 1's through the middle. This grid would be shuffled through the input grid (probably an image), and using `dot products` would output a single number for that region giving how much overlap was found.
+
+The distance the grid is moved is called the `stride`. Most frequently a stride of 1 is used.
+
+##### Padding
+
+When the filter grid is shuffled through the input, it outputs a smaller grid. For a 3x3 filter, the output would be n-2 in size given a stride of 1. To make the output the same size, a padding can be applied around the original input grid. I'm not sure what values are put in the padding layers, I assume small or random.
+
+##### Pooling
+
+Adding convolutional layers adds a lot of data, since each of the filters returns a feature map. To make this output smaller and more manageable, `pooling` is used.
+
+Pooling is generally either `max`, `min`, or `avg`. To apply pooling, a 2x2 filter is applied to the input (the input to the pooling layer, which is likely the output of the convolutional layer AKA a set of `feature maps`), and either the `max`, `min`, or `avg` is given to that segment. A stride of 2 would be used for a 2x2 filter, an `n x n` pooling filter uses stride `n`. For `n = 2` pooling, the input size will be cut in half.
+
+Max pooling is the most common, since we usually want to know if a features is present or not. For the reason also, average pooling is the least common.
