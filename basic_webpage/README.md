@@ -2,7 +2,7 @@ basic JS webpage
 
 currently takes input csv with one column and arbitrary header
 
-todo:
-Change so it can read 2 column csv and ignore first column
-Add ability to select file from webpage
+todo:\
+Change so it can read 2 column csv and ignore first column\
+Add ability to select file from webpage\
 add run button
