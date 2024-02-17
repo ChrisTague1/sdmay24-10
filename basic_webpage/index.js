@@ -1,4 +1,3 @@
-
 const csvUrl = 'http://localhost:8080/sample5062_input.csv'; 
 
 async function loadModel(){
@@ -20,12 +19,10 @@ async function runModel(){
 
     const dataArr = await csvData.toArray();
     console.log(dataArr.length);
-    // const tensor = tf.tensor(dataArr, [1, dataArr.length], dtype = tf.float16);
     const tensor = tf.tensor(dataArr, [1, dataArr.length]);
     
     const model = await loadModel();
 
-    //model.predict(tensor);
     prediction = model.predict(tensor);
     const result = prediction.dataSync();
     console.log(result[0]);
