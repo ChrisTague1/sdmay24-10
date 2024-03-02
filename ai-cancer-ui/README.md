@@ -1,38 +1,30 @@
-# create-svelte
+# AI Cancer UI
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is the frontend + backend for out senior design project; group `sdmay24-10`
 
-## Creating a project
+## Deployment
 
-If you're seeing this, you've probably already done this step. Congrats!
+> Work In Progress
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Deployments happen automatically on pushes to main, via `vercel`
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Running
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+If you do not have `node` installed, [install it](https://nodejs.org/en)
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# to see if you have node
+node --version
 ```
 
-## Building
-
-To create a production version of your app:
+To install dependencies:
 
 ```bash
-npm run build
+npm ci
 ```
 
-You can preview the production build with `npm run preview`.
+To test locally, run:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+npm start
+```
