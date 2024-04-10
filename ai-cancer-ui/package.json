@@ -24,6 +24,8 @@
     },
     "type": "module",
     "dependencies": {
-        "@tensorflow/tfjs": "^4.17.0"
+        "@tensorflow/tfjs": "^4.17.0",
+        "@tensorflow/tfjs-node": "^4.17.0",
+        "firebase": "^10.10.0"
     }
 }
