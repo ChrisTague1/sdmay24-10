@@ -25,7 +25,7 @@
 			}
 		}
 		if ($authStore.currentUser) {
-			window.location.href = '/app';
+			window.location.href = '/model1';
 		}
 	}
 </script>

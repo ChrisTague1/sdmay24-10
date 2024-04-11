@@ -10,13 +10,10 @@
 
 <nav>
   <li>
-    <a href="/">Login</a>
-  </li>
-  <li>
     <a href="/about">About</a>
   </li>
   <li>
-    <a href="/app">Model 1</a>
+    <a href="/model1">Model 1</a>
   </li>  
   <li>
     <a href="/model2">Model 2</a>

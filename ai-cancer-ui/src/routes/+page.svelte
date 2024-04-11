@@ -15,7 +15,8 @@
 		if (register && password === confirmPassword) {
 			try {
 				await authHandlers.signup(email, password);
-                goto('/');
+                // @ts-ignore
+                document.getElementById("back").click()
 			} catch (err) {
 				console.log(err);
                 // @ts-ignore
@@ -49,7 +50,7 @@
         {
 			try {
 				await authHandlers.login(email, password);
-                goto('/app');
+                goto('/model1');
 			} catch (err) {
 				console.log(err);
                 // @ts-ignore
@@ -80,6 +81,7 @@
 	</form>
 	{#if register}
 		<div
+			id="back"
 			on:click={() => {
                 // @ts-ignore
                 document.getElementById("ErrMsg").innerHTML = ""
