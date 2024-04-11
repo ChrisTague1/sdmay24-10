@@ -1,3 +1,5 @@
+<h1>Model 1</h1>
+
 <script lang='ts'>
     import {enhance} from '$app/forms';
 
@@ -14,3 +16,18 @@
         <h2 class="mt-4 text-2xl font-bold">{`Cancer will come back in ${form.prediction} months`}</h2>
     {/if}
 </div>
+
+<style>
+
+    h1{
+        text-align: center;
+        color: black;
+        font-family:'Century Gothic';
+        font-size:25px;
+    }
+
+    p{
+        padding: 20px 100px;
+    }
+
+</style>
