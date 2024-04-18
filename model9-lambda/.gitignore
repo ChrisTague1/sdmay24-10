@@ -1,0 +1,5 @@
+*.csv
+venv/
+deployment_package.zip
+__pycache__/
+*.keras
