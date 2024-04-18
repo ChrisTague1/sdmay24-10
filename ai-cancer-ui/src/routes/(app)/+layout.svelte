@@ -1,8 +1,4 @@
 <header>
-    <h1>
-        Cancer Research AI
-    </h1>
-
     <nav>
         <li>
             <a href="/about">About</a>
@@ -22,13 +18,6 @@
     header {
         background-color: #555;
         padding: 20px 10px;
-    }
-
-    h1 {
-        text-align: center;
-        color: white;
-        font-family:'Century Gothic';
-        font-size:30px;
     }
 
     li {
