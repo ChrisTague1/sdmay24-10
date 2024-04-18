@@ -1,45 +1,31 @@
-<script>
-  import "../../app.css";
-</script>
-
-
 <header>
-    <h1>
-        Cancer Research AI
-    </h1>
-
-<nav>
-  <li>
-    <a href="/about">About</a>
-  </li>
-  <li>
-    <a href="/model1">Model 1</a>
-  </li>  
-  <li>
-    <a href="/model2">Model 2</a>
-  </li>
-</nav>
+    <nav>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/model1">Model 1</a>
+        </li>  
+        <li>
+            <a href="/model2">Model 2</a>
+        </li>
+    </nav>
 </header>
 
+<slot />
+
 <style>
-    header{
+    header {
         background-color: #555;
         padding: 20px 10px;
     }
 
-    h1{
-        text-align: center;
-        color: white;
-        font-family:'Century Gothic';
-        font-size:30px;
+    li {
+        display: inline;
+        margin-right: 20px;
     }
 
-    li {
-      display: inline;
-      margin-right: 20px;
-   }
-
-    nav{
+    nav {
         text-align: center;
         color: white;
         font-family:'Century Gothic';
@@ -47,6 +33,4 @@
         padding: 20px 30px;
 
     }
-
 </style>
-<slot />
