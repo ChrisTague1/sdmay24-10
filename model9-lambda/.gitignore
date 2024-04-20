@@ -1,6 +1,6 @@
 *.csv
 venv/
-deployment_package.zip
+*.zip
 __pycache__/
 *.keras
 *.tflite

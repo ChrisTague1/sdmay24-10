@@ -14,7 +14,7 @@ export const actions = {
             .filter((_, i) => i & 1)
             .map(Number);
 
-        const response = await fetch("https://898ap5lxpl.execute-api.us-east-2.amazonaws.com/default/model_9", {
+        const response = await fetch("https://6vn3gamps6.execute-api.us-east-2.amazonaws.com/default/model_9_runner", {
             method: 'POST',
             body: JSON.stringify({
                 data
