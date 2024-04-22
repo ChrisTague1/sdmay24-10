@@ -5,7 +5,7 @@ mkdir lambda_package
 cd lambda_package
 
 # Install the required dependencies inside the lambda_package directory
-pip3 install numpy tflite_runtime -t .
+# pip3 install numpy tflite_runtime -t .
 
 # Copy the lambda_function.py file and the model9.tflite file into the lambda_package directory
 cp ../lambda_function.py .
