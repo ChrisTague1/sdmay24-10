@@ -1,6 +1,0 @@
-*.csv
-venv/
-*.zip
-__pycache__/
-*.keras
-*.tflite
