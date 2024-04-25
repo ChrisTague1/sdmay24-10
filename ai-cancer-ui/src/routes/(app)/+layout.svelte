@@ -1,11 +1,11 @@
 <script lang="ts">
-import { goto } from "$app/navigation";
-import type { LayoutData } from "./$types";
+    import { goto } from "$app/navigation";
+    import type { LayoutData } from "./$types";
 
-export let data: LayoutData;
+    export let data: LayoutData;
 
-let { supabase } = data;
-$: ({ supabase } = data);
+    let { supabase, isDoctor } = data;
+    $: ({ supabase, isDoctor } = data);
 </script>
 
 <nav class="bg-gray-100 py-4 sticky top-0 z-10">
@@ -17,10 +17,12 @@ $: ({ supabase } = data);
             </a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
-            <a href="/model" class="text-gray-600 hover:text-blue-400 transition duration-300 flex items-center">
-                <i class="mr-2"></i>
-                <span>Model</span>
-            </a>
+            {#if isDoctor}
+                <a href="/model" class="text-gray-600 hover:text-blue-400 transition duration-300 flex items-center">
+                    <i class="mr-2"></i>
+                    <span>Model</span>
+                </a>
+            {/if}
             <a href="/history" class="text-gray-600 hover:text-blue-400 transition duration-300 flex items-center">
                 <i class="mr-2"></i>
                 <span>History</span>

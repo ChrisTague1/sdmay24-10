@@ -1,4 +1,3 @@
-<!-- This is copied in root +page.svelte -->
 <nav class="bg-white py-4 sticky top-0 z-10 shadow">
     <div class="container mx-auto px-4 flex items-center justify-between">
         <a href="/" class="flex items-center">
