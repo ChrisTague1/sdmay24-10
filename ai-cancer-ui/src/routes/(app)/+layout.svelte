@@ -13,7 +13,7 @@ $: ({ supabase } = data);
         <div class="flex items-center">
             <a href="/" class="flex items-center">
                 <i class="fas fa-dna text-blue-500 text-2xl pt-1"></i>
-                <h1 class="text-2xl font-bold text-blue-500 ml-2">AI Cancer Recurrence Predictor</h1>
+                <h1 class="text-2xl font-bold text-blue-500 ml-2">AI Cancer Recurrence</h1>
             </a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
