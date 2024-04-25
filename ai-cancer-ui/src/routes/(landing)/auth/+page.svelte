@@ -63,7 +63,7 @@
             return;
         }
 
-        goto('/model');
+        goto('/dashboard');
     };
 </script>
 
