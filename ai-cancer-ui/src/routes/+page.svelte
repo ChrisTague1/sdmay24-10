@@ -23,19 +23,11 @@
                 <div class="bg-white rounded-lg shadow-lg p-4 sm:p-6">
                     <button 
                         on:click={() => {
-                            goto('/auth/doctor')
-                        }}
-                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300 mb-4"
-                    >
-                        Doctor Sign In
-                    </button>
-                    <button
-                        on:click={() => {
-                            goto('/auth/patient')
+                            goto('/auth')
                         }}
                         class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
                     >
-                        Patient Sign In
+                        Sign In
                     </button>
                 </div>
             </div>
