@@ -7,6 +7,7 @@
     let { supabase } = data;
     $: ({ supabase } = data);
 </script>
+Dashboard page
 <button
     on:click={async () => {
         await supabase.auth.signOut();
