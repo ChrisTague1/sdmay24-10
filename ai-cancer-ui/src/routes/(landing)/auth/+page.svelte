@@ -19,21 +19,33 @@
     };
 
     const handleSignUp = async () => {
-        const { error } = await supabase.auth.signUp({
+        const { error, data } = await supabase.auth.signUp({
             email,
             password,
             options: {
                 emailRedirectTo: `${location.origin}/auth/callback`,
             },
         });
-
-        email = '';
-        password = '';
+        const id = data.user?.id || '';
 
         if (error !== null) {
             console.log(error);
             return;
         }
+
+        const {error: error2} = await supabase.from('user_info').insert([{
+            user_id: id,
+            is_doctor: role === 'doctor'
+        }]);
+
+        if (error2 !== null) {
+            console.log(error);
+            return;
+        }
+
+        email = '';
+        password = '';
+
 
         checkEmailMessage = true;
         showRegisterDropdown = false;

@@ -9,30 +9,87 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      waitlist: {
+      history: {
         Row: {
           created_at: string
-          email: string | null
+          created_by: string | null
+          created_for: string | null
           id: number
+          value: number | null
         }
         Insert: {
           created_at?: string
-          email?: string | null
+          created_by?: string | null
+          created_for?: string | null
           id?: number
+          value?: number | null
         }
         Update: {
           created_at?: string
-          email?: string | null
+          created_by?: string | null
+          created_for?: string | null
           id?: number
+          value?: number | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "history_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "history_created_for_fkey"
+            columns: ["created_for"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_info: {
+        Row: {
+          created_at: string
+          id: number
+          is_doctor: boolean | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+          is_doctor?: boolean | null
+          user_id?: string
+        }
+        Update: {
+          created_at?: string
+          id?: number
+          is_doctor?: boolean | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_info_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_id_by_email: {
+        Args: {
+          email: string
+        }
+        Returns: {
+          id: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
