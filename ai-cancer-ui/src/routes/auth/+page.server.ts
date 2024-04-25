@@ -5,6 +5,6 @@ export const load: PageServerLoad = async ({ locals: { getSession } }) => {
   const session = await getSession();
 
   if (session !== null) {
-    throw redirect(303, '/profile');
+    throw redirect(303, '/model1');
   }
 }
