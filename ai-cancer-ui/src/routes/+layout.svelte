@@ -1,29 +1,29 @@
-<script lang="ts">
+<script lang='ts'>
 import '../app.css';
+import { invalidate } from '$app/navigation';
+import { onMount } from 'svelte';
+import type { LayoutData } from './$types';
+
+export let data: LayoutData;
+
+let { supabase, session } = data;
+$: ({ supabase, session } = data);
+
+onMount(() => {
+    const {
+        data: { subscription },
+    } = supabase.auth.onAuthStateChange((_, _session) => {
+        if (_session?.expires_at !== session?.expires_at) {
+            invalidate('supabase:auth')
+        }
+    })
+
+    return () => subscription.unsubscribe()
+});
 </script>
-
-<header>
-    <h1>
-        Cancer Research AI
-    </h1>
-</header>
-
-<slot/>
-
-<style>
-:global(body) {
-    font-family: Arial;
-    background-color:rgb(159, 178, 181);
-}
-header{
-    background-color: #555;
-    padding: 20px 10px;
-}
-
-h1{
-    text-align: center;
-    color: white;
-    font-family:'Century Gothic';
-    font-size:30px;
-}
-</style>
+<slot />
+<!-- <style lang='postcss'> -->
+<!-- :global(html) { -->
+<!--     background-color: theme(colors.gray.100); -->
+<!-- } -->
+<!-- </style> -->
