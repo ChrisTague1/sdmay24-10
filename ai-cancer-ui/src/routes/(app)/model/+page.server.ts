@@ -19,7 +19,7 @@ export const actions = {
             })
         });
         const serverData = await response.json();
-        const {predictions: prediction} = JSON.parse(serverData .body);
+        const { predictions: prediction } = JSON.parse(serverData.body);
 
         return {prediction};
 	},
