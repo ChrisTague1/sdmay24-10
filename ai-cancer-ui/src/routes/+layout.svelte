@@ -22,8 +22,11 @@ onMount(() => {
 });
 </script>
 <slot />
-<!-- <style lang='postcss'> -->
-<!-- :global(html) { -->
-<!--     background-color: theme(colors.gray.100); -->
-<!-- } -->
-<!-- </style> -->
+<style lang='postcss'>
+    :global(body) {
+        background-image: url('/static/light-grey-texture-background-image.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>

@@ -43,7 +43,7 @@
             return;
         }
 
-        goto('/model1');
+        goto('/model');
     };
 </script>
 
