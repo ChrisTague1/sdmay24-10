@@ -23,10 +23,6 @@
                     <span>Model</span>
                 </a>
             {/if}
-            <a href="/history" class="text-gray-600 hover:text-blue-400 transition duration-300 flex items-center">
-                <i class="mr-2"></i>
-                <span>History</span>
-            </a>
             <a href="/dashboard" class="text-gray-600 hover:text-blue-400 transition duration-300 flex items-center">
                 <i class="mr-2"></i>
                 <span>Dashboard</span>
