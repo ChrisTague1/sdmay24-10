@@ -23,7 +23,6 @@
             email,
             password,
             options: {
-                data: { role },
                 emailRedirectTo: `${location.origin}/auth/callback`,
             },
         });
