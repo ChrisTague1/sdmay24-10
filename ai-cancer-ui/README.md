@@ -2,6 +2,8 @@
 
 This is the frontend + backend for out senior design project; group `sdmay24-10`
 
+It is based.
+
 ## Deployment
 
 - Inside `sdmay24-10` (or any other directory of this project) run the following command to add a second remote:
