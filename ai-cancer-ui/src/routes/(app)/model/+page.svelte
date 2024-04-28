@@ -46,6 +46,18 @@
         fileName = '';
         email = '';
     }
+
+    
+
+    function convertMonthsToYearsMonthsDays(months: number): string {
+	    const years = Math.floor(months / 12);
+	    const remainingMonths = Math.floor(months % 12);
+	    const daysInMonth = 30; // Average number of days in a month
+	    const remainingDays = Math.floor((months / 12 - years) * 365.25); // Total days in remaining fraction of a year
+	    const days = Math.floor(remainingDays % daysInMonth); // Remaining days after subtracting full months
+	    return `${years} years, ${remainingMonths} months, and ${days} days`;
+	}
+
 </script>
 
 <main class="container mx-auto px-8 py-12">
@@ -76,7 +88,7 @@
         </form>
 
         {#if form}
-            <h2 class="mt-8 text-2xl font-bold text-blue-500">Cancer will come back in {form.prediction} months</h2>
+            <h2 class="mt-8 text-2xl font-bold text-blue-500">Cancer will come back in {convertMonthsToYearsMonthsDays(form.prediction)}</h2>
 
             <div class="mt-8">
                 <label for="email" class="block text-gray-700 mb-2">Enter Patient Email</label>

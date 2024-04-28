@@ -16,6 +16,15 @@
         };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
+
+    function convertMonthsToYearsMonthsDays(months: number): string {
+	    const years = Math.floor(months / 12);
+	    const remainingMonths = Math.floor(months % 12);
+	    const daysInMonth = 30; // Average number of days in a month
+	    const remainingDays = Math.floor((months / 12 - years) * 365.25); // Total days in remaining fraction of a year
+	    const days = Math.floor(remainingDays % daysInMonth); // Remaining days after subtracting full months
+	    return `${years} years, ${remainingMonths} months, and ${days} days`;
+	}
 </script>
 
 <div class="container mx-auto px-4 py-8">
@@ -41,7 +50,7 @@
                             <h2 class="text-xl font-bold">{item.createdFor}</h2>
                         </div>
                         <p class="text-gray-700 mb-4">
-                            Based on the provided cell data, the cancer is predicted to recur in approximately <span class="font-bold">{item.value.toFixed(2)}</span> months.
+                            Based on the provided cell data, the cancer is predicted to recur in approximately <span class="font-bold">{convertMonthsToYearsMonthsDays(item.value.toFixed(2))}</span>.
                         </p>
                         <div class="flex items-center justify-between">
                             <p class="text-gray-500 text-sm">
@@ -72,7 +81,7 @@
                             <h2 class="text-xl font-bold">{item.createdBy}</h2>
                         </div>
                         <p class="text-gray-700 mb-4">
-                            Based on the provided cell data, the cancer is predicted to recur in approximately <span class="font-bold">{item.value.toFixed(2)}</span> months.
+                            Based on the provided cell data, the cancer is predicted to recur in approximately <span class="font-bold">{convertMonthsToYearsMonthsDays(item.value.toFixed(2))}</span>.
                         </p>
                         <p class="text-gray-500 text-sm">
                             <i class="far fa-clock mr-2"></i>Scan Date: {formatDate(item.createdAt)}
