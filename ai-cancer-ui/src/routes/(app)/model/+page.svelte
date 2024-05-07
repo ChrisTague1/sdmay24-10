@@ -64,6 +64,7 @@
     <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 border border-gray-200">
         <h2 class="text-3xl font-bold text-blue-500 mb-6">Upload CSV</h2>
         <p class="text-gray-700 mb-8">Please upload your cancer data CSV file for cancer recurrence prediction.</p>
+        <p class="text-gray-700 mb-8">Note: The EC2 hosting the model was taken down on May 6th. Results shown now are untrained. To view the website with a working model, please go to the demo available on here: https://sdmay24-10.sd.ece.iastate.edu</p>
 
         <form method='POST' enctype="multipart/form-data" use:enhance>
             <div class="relative mb-8">
